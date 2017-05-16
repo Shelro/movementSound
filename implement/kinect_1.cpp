@@ -9,6 +9,10 @@
 #include <stdio.h>
 #include <iostream>
 #include <NuiApi.h>
+//#include <windows.h>
+#include <mmsystem.h>
+#include<dsound.h>
+#pragma comment(lib, "WINMM.LIB")
 
 using namespace std;
 
@@ -78,26 +82,85 @@ int main(){
         level = (skeletonFrame.SkeletonData[i].SkeletonPositions[j].y - minh) / gap;
         
         switch (level){
-            case 0 : //play music1
-            case 1 : //play music2
-            case 2 : //play music1
-            case 3 : //play music2
-            case 4 : //play music1
-            case 5 : //play music2
-            case 6 : //play music1
-            case 7 : //play music2
-            case 8 : //play music1
-            case 9 : //play music2
-            case 10 : //play music1
-            case 11 : //play music2
-            case 12 : //play music1
-            case 13 : //play music2
-            case 14 : //play music1
-            case 15 : //play music2
-            case 16 : //play music1
-            case 17 : //play music2
-            case 18 : //play music1
-            case 19 : //play music2
+            case 0 : {
+                PlaySound(TEXT("/Users/zhangyingyi/Documents/重要文件/同济/学习/川美kinect/sound/40-C  -小字1组.mp3"), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP );
+                break;
+            }
+            case 1 : {
+                PlaySound(TEXT("/Users/zhangyingyi/Documents/重要文件/同济/学习/川美kinect/sound/42-D  -小字1组.mp3"), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP );
+                break;
+            }
+            case 2 : {
+                PlaySound(TEXT("/Users/zhangyingyi/Documents/重要文件/同济/学习/川美kinect/sound/44-E  -小字1组.mp3"), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP );
+                break;
+            }
+            case 3 : {
+                PlaySound(TEXT("/Users/zhangyingyi/Documents/重要文件/同济/学习/川美kinect/sound/45-F  -小字1组.mp3"), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP );
+                break;
+            }
+            case 4 : {
+                PlaySound(TEXT("/Users/zhangyingyi/Documents/重要文件/同济/学习/川美kinect/sound/47-G  -小字1组.mp3"), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP );
+                break;
+            }
+            case 5 : {
+                PlaySound(TEXT("/Users/zhangyingyi/Documents/重要文件/同济/学习/川美kinect/sound/49-A  -小字1组.mp3"), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP );
+                break;
+            }
+            case 6 : {
+                PlaySound(TEXT("/Users/zhangyingyi/Documents/重要文件/同济/学习/川美kinect/sound/51-B  -小字1组.mp3"), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP );
+                break;
+            }
+            case 7 : {
+                PlaySound(TEXT("/Users/zhangyingyi/Documents/重要文件/同济/学习/川美kinect/sound/52-C  -小字2组.mp3"), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP );
+                break;
+            }
+            case 8 : {
+                PlaySound(TEXT("/Users/zhangyingyi/Documents/重要文件/同济/学习/川美kinect/sound/54-D  -小字2组.mp3"), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP );
+                break;
+            }
+            case 9 : {
+                PlaySound(TEXT("/Users/zhangyingyi/Documents/重要文件/同济/学习/川美kinect/sound/56-E  -小字2组.mp3"), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP );
+                break;
+            }
+            case 10 : {
+                PlaySound(TEXT("/Users/zhangyingyi/Documents/重要文件/同济/学习/川美kinect/sound/57-F  -小字2组.mp3"), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP );
+                break;
+            }
+            case 11 : {
+                PlaySound(TEXT("/Users/zhangyingyi/Documents/重要文件/同济/学习/川美kinect/sound/59-G  -小字2组.mp3"), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP );
+                break;
+            }
+            case 12 : {
+                PlaySound(TEXT("/Users/zhangyingyi/Documents/重要文件/同济/学习/川美kinect/sound/61-A  -小字2组.mp3"), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP );
+                break;
+            }
+            case 13 : {
+                PlaySound(TEXT("/Users/zhangyingyi/Documents/重要文件/同济/学习/川美kinect/sound/63-B  -小字2组.mp3"), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP );
+                break;
+            }
+            case 14 : {
+                PlaySound(TEXT("/Users/zhangyingyi/Documents/重要文件/同济/学习/川美kinect/sound/64-C  -小字3组.mp3"), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP );
+                break;
+            }
+            case 15 : {
+                PlaySound(TEXT("/Users/zhangyingyi/Documents/重要文件/同济/学习/川美kinect/sound/66-D  -小字3组.mp3"), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP );
+                break;
+            }
+            case 16 : {
+                PlaySound(TEXT("/Users/zhangyingyi/Documents/重要文件/同济/学习/川美kinect/sound/68-E  -小字3组.mp3"), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP );
+                break;
+            }
+            case 17 : {
+                PlaySound(TEXT("/Users/zhangyingyi/Documents/重要文件/同济/学习/川美kinect/sound/69-F  -小字3组.mp3"), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP );
+                break;
+            }
+            case 18 : {
+                PlaySound(TEXT("/Users/zhangyingyi/Documents/重要文件/同济/学习/川美kinect/sound/71-G  -小字3组.mp3"), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP );
+                break;
+            }
+            default:{
+                PlaySound(TEXT("/Users/zhangyingyi/Documents/重要文件/同济/学习/川美kinect/sound/73-A  -小字3组.mp3"), NULL, SND_FILENAME | SND_ASYNC | SND_LOOP );
+            }
         }
     }
     
