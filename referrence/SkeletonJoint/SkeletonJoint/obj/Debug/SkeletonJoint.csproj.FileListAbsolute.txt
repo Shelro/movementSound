@@ -1,0 +1,16 @@
+E:\Kinect Dev\SkeletonJoint\SkeletonJoint\bin\Debug\SkeletonJoint.exe.config
+E:\Kinect Dev\SkeletonJoint\SkeletonJoint\bin\Debug\SkeletonJoint.exe
+E:\Kinect Dev\SkeletonJoint\SkeletonJoint\bin\Debug\SkeletonJoint.pdb
+E:\Kinect Dev\SkeletonJoint\SkeletonJoint\obj\Debug\SkeletonJoint.csprojResolveAssemblyReference.cache
+E:\Kinect Dev\SkeletonJoint\SkeletonJoint\obj\Debug\SkeletonJoint.Form1.resources
+E:\Kinect Dev\SkeletonJoint\SkeletonJoint\obj\Debug\SkeletonJoint.Properties.Resources.resources
+E:\Kinect Dev\SkeletonJoint\SkeletonJoint\obj\Debug\SkeletonJoint.csproj.GenerateResource.Cache
+E:\Kinect Dev\SkeletonJoint\SkeletonJoint\obj\Debug\SkeletonJoint.exe
+E:\Kinect Dev\SkeletonJoint\SkeletonJoint\obj\Debug\SkeletonJoint.pdb
+C:\Users\jx\Documents\重要文件\Kinect骨骼点\新建文件夹\SkeletonJoint\SkeletonJoint\bin\Debug\SkeletonJoint.exe.config
+C:\Users\jx\Documents\重要文件\Kinect骨骼点\新建文件夹\SkeletonJoint\SkeletonJoint\obj\Debug\SkeletonJoint.exe
+C:\Users\jx\Documents\重要文件\Kinect骨骼点\新建文件夹\SkeletonJoint\SkeletonJoint\obj\Debug\SkeletonJoint.pdb
+C:\Users\jx\Documents\重要文件\Kinect骨骼点\新建文件夹\SkeletonJoint\SkeletonJoint\obj\Debug\SkeletonJoint.csprojResolveAssemblyReference.cache
+C:\Users\jx\Documents\重要文件\Kinect骨骼点\新建文件夹\SkeletonJoint\SkeletonJoint\obj\Debug\SkeletonJoint.Form1.resources
+C:\Users\jx\Documents\重要文件\Kinect骨骼点\新建文件夹\SkeletonJoint\SkeletonJoint\obj\Debug\SkeletonJoint.Properties.Resources.resources
+C:\Users\jx\Documents\重要文件\Kinect骨骼点\新建文件夹\SkeletonJoint\SkeletonJoint\obj\Debug\SkeletonJoint.csproj.GenerateResource.Cache

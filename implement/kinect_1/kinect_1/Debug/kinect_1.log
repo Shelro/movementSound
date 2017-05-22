@@ -1,0 +1,11 @@
+﻿  kinect_1.cpp
+c:\users\jx\documents\重要文件\kinect骨骼点\kinect_1\kinect_1\kinect_1.cpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+c:\users\jx\documents\重要文件\kinect骨骼点\kinect_1\kinect_1\kinect_1.cpp(82): warning C4244: “初始化”: 从“float”转换到“int”，可能丢失数据
+c:\users\jx\documents\重要文件\kinect骨骼点\kinect_1\kinect_1\kinect_1.cpp(84): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+c:\users\jx\documents\重要文件\kinect骨骼点\kinect_1\kinect_1\kinect_1.cpp(86): warning C4305: “初始化”: 从“double”到“float”截断
+c:\users\jx\documents\重要文件\kinect骨骼点\kinect_1\kinect_1\kinect_1.cpp(87): warning C4305: “初始化”: 从“double”到“float”截断
+c:\users\jx\documents\重要文件\kinect骨骼点\kinect_1\kinect_1\kinect_1.cpp(187): warning C4244: “初始化”: 从“float”转换到“int”，可能丢失数据
+c:\users\jx\documents\重要文件\kinect骨骼点\kinect_1\kinect_1\kinect_1.cpp(191): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
+c:\users\jx\documents\重要文件\kinect骨骼点\kinect_1\kinect_1\kinect_1.cpp(337): warning C4244: “=”: 从“float”转换到“int”，可能丢失数据
+  kinect_1.vcxproj -> C:\Users\jx\Documents\重要文件\Kinect骨骼点\kinect_1\Debug\kinect_1.exe
+  kinect_1.vcxproj -> C:\Users\jx\Documents\重要文件\Kinect骨骼点\kinect_1\Debug\kinect_1.pdb (Full PDB)
