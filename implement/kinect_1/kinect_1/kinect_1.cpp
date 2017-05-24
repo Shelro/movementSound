@@ -34,7 +34,7 @@ inline void SafeRelease(Interface *& pInterfaceToRelease)
 	}
 }
 
-void showImage(int t) {
+void showImage(int t, int &c) {
 	string doc = "C:\\Users\\jx\\Desktop\\jpg\\9s0";
 	string str;
 	string postfix = ".jpg";
@@ -46,6 +46,8 @@ void showImage(int t) {
 		ostringstream oss;
 		oss << i;
 		str = oss.str();
+
+		c = i;
 
 		if (i < 10) {
 			str = "00" + str;
@@ -86,6 +88,9 @@ int main(){
 	float xstart = 1.01718;
 	float xend = -2.08849;
 
+	int count = 0;
+	int &cou = count;
+
 	HRESULT hResult = S_OK;
 	IKinectSensor *kinect;
 	GetDefaultKinectSensor(&kinect);
@@ -102,7 +107,7 @@ int main(){
 #pragma omp section  
 		{
 			while (1) {
-				showImage(imageT);
+				showImage(imageT, cou);
 			}
 		}
 #pragma omp section  
@@ -135,6 +140,8 @@ int main(){
 									len = xstart - xend;
 									float v = 0;
 									v = len / time;
+
+									float cgap = len / 109;
 
 									float xposition[7];
 									float yposition[7];
@@ -184,158 +191,130 @@ int main(){
 										}
 									}
 
-									int blank = ((xstart - xposition[0]) / v) * 1000;
-									Sleep(blank);
+									int blank = 0;
+									if ((count * cgap) < (xstart - xposition[0])) {
+										blank = ((xstart - xposition[0] - count*cgap) / v) * 1000;
+										Sleep(blank);
 
-									for (int j = 0; j < 7; j++) {
-										level = (yposition[j] - minh) / gap;
+										for (int j = 0; j < 7; j++) {
+											level = (yposition[j] - minh) / gap;
 
-										/*
-										switch (level) {
-										case 0: {
-										PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\1.wav"), NULL, SND_ASYNC | SND_NODEFAULT); //SND_FILENAME | SND_ASYNC
-										Sleep(playSec);
-										break;
+											switch (level) {
+											case 0: {
+												PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\1.wav"), NULL, SND_ASYNC | SND_NODEFAULT); //SND_FILENAME | SND_ASYNC
+												Sleep(playSec);
+												break;
+											}
+											case 1: {
+												PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\2.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
+												Sleep(playSec);
+												break;
+											}
+											case 2: {
+												PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\3.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
+												Sleep(playSec);
+												break;
+											}
+											case 3: {
+												PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\4.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
+												Sleep(playSec);
+												break;
+											}
+											case 4: {
+												PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\5.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
+												Sleep(playSec);
+												break;
+											}
+											case 5: {
+												PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\7.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
+												Sleep(playSec);
+												break;
+											}
+											case 6: {
+												PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\7.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
+												Sleep(playSec);
+												break;
+											}
+											case 7: {
+												PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\8.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
+												Sleep(playSec);
+												break;
+											}
+											case 8: {
+												PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\9.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
+												Sleep(playSec);
+												break;
+											}
+											case 9: {
+												PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\10.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
+												Sleep(playSec);
+												break;
+											}
+											case 10: {
+												PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\11.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
+												Sleep(playSec);
+												break;
+											}
+											case 11: {
+												PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\12.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
+												Sleep(playSec);
+												break;
+											}
+											case 12: {
+												PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\13.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
+												Sleep(playSec);
+												break;
+											}
+											case 13: {
+												PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\14.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
+												Sleep(playSec);
+												break;
+											}
+											case 14: {
+												PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\15.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
+												Sleep(playSec);
+												break;
+											}
+											case 15: {
+												PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\16.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
+												Sleep(playSec);
+												break;
+											}
+											case 16: {
+												PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\17.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
+												Sleep(playSec);
+												break;
+											}
+											case 17: {
+												PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\18.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
+												Sleep(playSec);
+												break;
+											}
+											case 18: {
+												PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\19.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
+												Sleep(playSec);
+												break;
+											}
+											case 19: {
+												PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\20.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
+												Sleep(playSec);
+												break;
+											}
+											case 20: {
+												PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\20.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
+												Sleep(playSec);
+												break;
+											}
+											default: {
+												break;
+											}
+											}
 										}
-										case 1: {
-										PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\2.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
-										Sleep(playSec);
-										break;
-										}
-										case 2: {
-										PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\3.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
-										Sleep(playSec);
-										break;
-										}
-										case 3: {
-										PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\4.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
-										Sleep(playSec);
-										break;
-										}
-										case 4: {
-										PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\5.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
-										Sleep(playSec);
-										break;
-										}
-										case 5: {
-										PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\7.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
-										Sleep(playSec);
-										break;
-										}
-										case 6: {
-										PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\7.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
-										Sleep(playSec);
-										break;
-										}
-										case 7: {
-										PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\8.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
-										Sleep(playSec);
-										break;
-										}
-										case 8: {
-										PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\9.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
-										Sleep(playSec);
-										break;
-										}
-										case 9: {
-										PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\10.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
-										Sleep(playSec);
-										break;
-										}
-										case 10: {
-										PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\11.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
-										Sleep(playSec);
-										break;
-										}
-										case 11:{
-										PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\12.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
-										Sleep(playSec);
-										break;
-										}
-										case 12: {
-										PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\13.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
-										Sleep(playSec);
-										break;
-										}
-										case 13: {
-										PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\14.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
-										Sleep(playSec);
-										break;
-										}
-										case 14: {
-										PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\15.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
-										Sleep(playSec);
-										break;
-										}
-										case 15: {
-										PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\16.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
-										Sleep(playSec);
-										break;
-										}
-										case 16: {
-										PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\17.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
-										Sleep(playSec);
-										break;
-										}
-										case 17: {
-										PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\18.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
-										Sleep(playSec);
-										break;
-										}
-										case 18: {
-										PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\19.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
-										Sleep(playSec);
-										break;
-										}
-										case 19: {
-										PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\20.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
-										Sleep(playSec);
-										break;
-										}
-										case 20: {
-										PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\20.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
-										Sleep(playSec);
-										break;
-										}
-										default: {
-										break;
-										}
-										}
-										*/
+										tag = false;
 
-										if (level == 0) {
-											PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\1.wav"), NULL, SND_ASYNC | SND_NODEFAULT); //SND_FILENAME | SND_ASYNC
-											Sleep(playSec);
-										}
-										else if (level == 1) {
-											PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\2.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
-											Sleep(playSec);
-										}
-										else if (level == 2) {
-											PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\3.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
-											Sleep(playSec);
-										}
-										else if (level == 3) {
-											PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\4.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
-											Sleep(playSec);
-										}
-										else if (level == 4) {
-											PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\5.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
-											Sleep(playSec);
-										}
-										else if (level == 5) {
-											PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\6.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
-											Sleep(playSec);
-										}
-										else if (level == 6 || level == 7) {
-											PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\7.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
-											Sleep(playSec);
-										}
-									}
-									tag = false;
-
-									blank = ((xposition[6] - xend) / v) * 1000;
-									Sleep(blank);
+										blank = ((xposition[6] - xend) / v) * 1000;
+										Sleep(blank);
+									}                                                                                                                                                                                                                                                                                                                      
 								}
 							}
 						}
@@ -360,8 +339,6 @@ int main(){
 		kinect->Close();
 	}
 	SafeRelease(kinect);
-
-	destroyAllWindows();
 
 	return 0;
 }
