@@ -35,8 +35,13 @@ inline void SafeRelease(Interface *& pInterfaceToRelease)
 	}
 }
 
+<<<<<<< HEAD
 void showImage(int t, int &c, int iv, int time) {
 	string doc = "C:/Users/Administrator/Desktop/jpg/a0";
+=======
+void showImage(int t, int &c) {
+	string doc = "C:\\Users\\jx\\Desktop\\jpg\\9s0";
+>>>>>>> origin/master
 	string str;
 	string postfix = ".jpg";
 	string imagename;
@@ -50,6 +55,7 @@ void showImage(int t, int &c, int iv, int time) {
 
 		c = i;
 
+<<<<<<< HEAD
 		if (c > 2*time*iv) {
 			c -= 2*time*iv;
 		}
@@ -57,6 +63,8 @@ void showImage(int t, int &c, int iv, int time) {
 			c -= time*iv;
 		}
 
+=======
+>>>>>>> origin/master
 		if (i < 10) {
 			str = "00" + str;
 		}
@@ -214,9 +222,13 @@ int main() {
 	int count = 0;
 	int &cou = count;
 
+<<<<<<< HEAD
 	HRESULT hResult1 = S_OK;
 	HRESULT hResult2 = S_OK;
 	HRESULT hResult3 = S_OK;
+=======
+	HRESULT hResult = S_OK;
+>>>>>>> origin/master
 	IKinectSensor *kinect;
 	GetDefaultKinectSensor(&kinect);
 	kinect->Open();
@@ -231,7 +243,11 @@ int main() {
 #pragma omp section  
 		{
 			while (1) {
+<<<<<<< HEAD
 				showImage(imageT, cou, imageV, time);
+=======
+				showImage(imageT, cou);
+>>>>>>> origin/master
 			}
 		}
 #pragma omp section  
@@ -273,7 +289,11 @@ int main() {
 									float v = 0;
 									v = len / time;
 
+<<<<<<< HEAD
 									float cgap = len / (time*imageV);
+=======
+									float cgap = len / 109;
+>>>>>>> origin/master
 
 									float xposition[7];
 									float yposition[7];
@@ -323,6 +343,7 @@ int main() {
 
 									int blank = 0;
 									if ((count * cgap) < (xstart - xposition[0])) {
+<<<<<<< HEAD
 										blank = ((xstart - xposition[0] - count*cgap) / v) * 1000 + 50;
 										//cout << blank << endl << xposition[0] << endl;
 										Sleep(blank);
@@ -538,6 +559,130 @@ int main() {
 										blank = ((xposition[20] - xend) / v) * 1000;
 										Sleep(blank);
 									}
+=======
+										blank = ((xstart - xposition[0] - count*cgap) / v) * 1000;
+										Sleep(blank);
+
+										for (int j = 0; j < 7; j++) {
+											level = (yposition[j] - minh) / gap;
+
+											switch (level) {
+											case 0: {
+												PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\1.wav"), NULL, SND_ASYNC | SND_NODEFAULT); //SND_FILENAME | SND_ASYNC
+												Sleep(playSec);
+												break;
+											}
+											case 1: {
+												PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\2.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
+												Sleep(playSec);
+												break;
+											}
+											case 2: {
+												PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\3.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
+												Sleep(playSec);
+												break;
+											}
+											case 3: {
+												PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\4.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
+												Sleep(playSec);
+												break;
+											}
+											case 4: {
+												PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\5.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
+												Sleep(playSec);
+												break;
+											}
+											case 5: {
+												PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\7.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
+												Sleep(playSec);
+												break;
+											}
+											case 6: {
+												PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\7.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
+												Sleep(playSec);
+												break;
+											}
+											case 7: {
+												PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\8.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
+												Sleep(playSec);
+												break;
+											}
+											case 8: {
+												PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\9.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
+												Sleep(playSec);
+												break;
+											}
+											case 9: {
+												PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\10.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
+												Sleep(playSec);
+												break;
+											}
+											case 10: {
+												PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\11.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
+												Sleep(playSec);
+												break;
+											}
+											case 11: {
+												PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\12.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
+												Sleep(playSec);
+												break;
+											}
+											case 12: {
+												PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\13.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
+												Sleep(playSec);
+												break;
+											}
+											case 13: {
+												PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\14.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
+												Sleep(playSec);
+												break;
+											}
+											case 14: {
+												PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\15.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
+												Sleep(playSec);
+												break;
+											}
+											case 15: {
+												PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\16.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
+												Sleep(playSec);
+												break;
+											}
+											case 16: {
+												PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\17.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
+												Sleep(playSec);
+												break;
+											}
+											case 17: {
+												PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\18.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
+												Sleep(playSec);
+												break;
+											}
+											case 18: {
+												PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\19.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
+												Sleep(playSec);
+												break;
+											}
+											case 19: {
+												PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\20.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
+												Sleep(playSec);
+												break;
+											}
+											case 20: {
+												PlaySound(TEXT("C:\\Users\\jx\\Desktop\\77\\20.wav"), NULL, SND_ASYNC | SND_NODEFAULT);
+												Sleep(playSec);
+												break;
+											}
+											default: {
+												break;
+											}
+											}
+										}
+										tag = false;
+
+										blank = ((xposition[6] - xend) / v) * 1000;
+										Sleep(blank);
+									}                                                                                                                                                                                                                                                                                                                      
+>>>>>>> origin/master
 								}
 								break;
 							}*/
